@@ -11,12 +11,11 @@ res = Net::HTTP.start('www.yahoo.co.jp') {|http|
 doc = Nokogiri::HTML.parse(res.body)
 
 topic = doc.css('#topicsfb ul.emphasis a').text
-
 link = doc.css('#topicsfb ul.emphasis a').attr('href').value
 
 
 doc.css('#topicsfb ul.emphasis a').each { |topic|
-puts "#{topic.text},#{topic.attr('href')}"
+  puts "#{topic.text},#{topic.attr('href')}"
   # 上で取得した「aタグ」それぞれに対して中身を表示する
 }
 
