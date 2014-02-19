@@ -3,25 +3,17 @@
 <% @restaurants.each do |restaurant| %>
   <p><a href="/work/4-2/<%= restaurant['id'] %>"><%= restaurant['name'] %></a></p>
 <% end %>
+<p>全<%= @pagecountall %>ページ</p>
 
 <p>全<%= @countall %>件</p>
 <ul>
-
-
-  <li><%= @prev %></li>
-
-
-
-  <li><a href="<%= @prev4 %>"><%= "#{ params[:id].to_i - 1 }" %></a></li>
-  <li><a href="<%= @prev3 %>">まえへ</a></li>
-  <li><a href="<%= @prev2 %>">まえへ</a></li>
-  <li><a href="<%= @prev1 %>">まえへ</a></li>
-  <li><a href="<%= @prev1 %>">まえへ</a></li>
-  <li><a href="<%= @next1 %>">次へ</a></li>
-  <li><a href="<%= @next2 %>">次へ</a></li>
-  <li><a href="<%= @next3 %>">次へ</a></li>
-  <li><a href="<%= @next4 %>">次へ</a></li>
-  <li><a href="<%= @next %>">次へ</a></li>
+  <%= @prev %>
+  <%= @prev2 %>
+  <%= @prev1 %>
+  <li style="color:#f00;"><%= params[:id] %></li>
+  <%= @next1 %>
+  <%= @next2 %>
+  <%= @next %>
 </ul>
 
 
