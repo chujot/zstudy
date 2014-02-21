@@ -1,9 +1,23 @@
 <h1>レストラン一覧</h1>
 
+<form>
+  <input name="keyword">
+  <input type="submit" value="検索">
+</form>
+<p>testaa<%= @keyword %></p>
+
 <% @restaurants.each do |restaurant| %>
   <p><a href="/work/4-2/<%= restaurant['id'] %>"><%= restaurant['name'] %></a></p>
 <% end %>
-<p>全<%= @pagecountall %>ページ</p>
+
+
+<p>test</p>
+<% @search_keyword.each do |restaurant| %>
+  <p><a href="/work/4-2/<%= restaurant['id'] %>"><%= restaurant['name'] %></a></p>
+<% end %>
+<% if false %>
+<% end %>
+
 
 <p>全<%= @countall %>件</p>
 <ul>
@@ -15,6 +29,7 @@
   <%= @next2 %>
   <%= @next %>
 </ul>
+<%= @test %>
 
-
+<p>全<%= @pagecountall %>ページ</p>
 

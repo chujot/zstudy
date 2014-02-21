@@ -10,8 +10,13 @@ get '/work/4-2/?page=:id' do
 
   pagecount = params[:id]
 
+
   # テンプレートで使う変数には「@」をつける
   @restaurants = db.execute('SELECT * FROM restaurants LIMIT 5 OFFSET ?', [params[:id].to_i * 5])
+
+  @keyword = params['keyword']
+
+ @search_keyword = db.execute('SELECT * FROM restaurants WHERE name like ?', "%#{params['keyword']}%")
 
   # prevtest = params[:id].to_i - 1
   # データの件数を取得
@@ -54,7 +59,7 @@ get '/work/4-2/?page=:id' do
 end
 
 
-get '/test/4-4/:id' do
+get '/work/4-2/:id' do
 
   # テンプレートで使う変数には「@」をつける
   @restaurant = db.execute('SELECT * FROM restaurants WHERE id = ? LIMIT 1;', [params[:id]]).first
