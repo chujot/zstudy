@@ -11,11 +11,12 @@
 <% end %>
 
 
+<% if false %>
 <p>test</p>
 <% @search_keyword.each do |restaurant| %>
   <p><a href="/work/4-2/<%= restaurant['id'] %>"><%= restaurant['name'] %></a></p>
 <% end %>
-<% if false %>
+
 <% end %>
 
 
@@ -24,7 +25,7 @@
   <%= @prev %>
   <%= @prev2 %>
   <%= @prev1 %>
-  <li style="color:#f00;"><%= params[:id] %></li>
+  <li style="color:#f00;"><%= params[:page].to_i %></li>
   <%= @next1 %>
   <%= @next2 %>
   <%= @next %>
@@ -32,4 +33,3 @@
 <%= @test %>
 
 <p>全<%= @pagecountall %>ページ</p>
-
